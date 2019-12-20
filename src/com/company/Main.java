@@ -17,13 +17,8 @@ public class Main {
         int activeMembersCount=count;
 
         while (true) {
-
-            Random rand = new Random();
-            int min = 1;
-            int max = 5;
-            int random = rand.nextInt(max-min+1) + min;
-            timeOfTheMessage();
-            System.out.print("Member"+random+ " name:");
+            printTimeOfTheMessage();
+            printName();
 
             int actionNumber=0;
             do {
@@ -32,7 +27,7 @@ public class Main {
             }
             while (actionNumber != 1 && actionNumber!= 2);
             if (actionNumber == 1) {
-                textMessage();
+                printMessage();
             }
             if (actionNumber == 2) {
                 activeMembersCount--;
@@ -43,18 +38,27 @@ public class Main {
         }
     }
 
-    private static void timeOfTheMessage() {
+    private static void printTimeOfTheMessage() {
         LocalDateTime dateT = LocalDateTime.now();
         DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
         String formattedDate = dateT.format(formatDate);
         System.out.print( formattedDate +"(date) ");
     }
 
-    private static void textMessage() {
+    private static void printMessage() {
         Scanner member = new Scanner(System.in);
         System.out.print("text: ");
         String memberText = member.nextLine();
     }
+
+    private static void printName(){
+        Random rand = new Random();
+        int min = 1;
+        int max = 5;
+        int random = rand.nextInt(max-min+1) + min;
+        System.out.print("Member"+random+ " name:");
+    }
+
 }
 
 
