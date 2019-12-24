@@ -19,7 +19,7 @@ public class Main {
 
         while (true) {
             printTimeOfTheMessage();
-            printName(listOfChatMembers);
+            chatAction (listOfChatMembers);
             if (listOfChatMembers.isEmpty()) {
                 return;
             }
@@ -39,10 +39,10 @@ public class Main {
         String memberText = member.nextLine();
     }
 
-    private static void printName(ArrayList<String> listOfChatMembers) {
+    private static void chatAction (ArrayList<String> listOfChatMembers) {
         Random rand = new Random();
-        String randomString = listOfChatMembers.get(rand.nextInt(listOfChatMembers.size()));
-        System.out.print(randomString);
+        String activeMember = listOfChatMembers.get(rand.nextInt(listOfChatMembers.size()));
+        System.out.print(activeMember);
 
         int actionNumber = 0;
         do {
@@ -54,8 +54,8 @@ public class Main {
         if (actionNumber == 1) {
             printMessage();
         }
-        if (!(listOfChatMembers.isEmpty()) && actionNumber == 2) {
-            listOfChatMembers.remove(randomString);
+        if (actionNumber == 2) {
+            listOfChatMembers.remove(activeMember);
         }
 
         if (listOfChatMembers.isEmpty()) {
