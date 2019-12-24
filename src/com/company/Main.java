@@ -44,6 +44,7 @@ public class Main {
         String activeMember = listOfChatMembers.get(rand.nextInt(listOfChatMembers.size()));
         System.out.print(activeMember);
 
+
         int actionNumber = 0;
         do {
             Scanner action = new Scanner(System.in);
@@ -54,12 +55,14 @@ public class Main {
         if (actionNumber == 1) {
             printMessage();
         }
+
         if (actionNumber == 2) {
             listOfChatMembers.remove(activeMember);
-        }
 
-        if (listOfChatMembers.isEmpty()) {
-            System.out.println("End of chat");
+
+            if (listOfChatMembers.isEmpty()) {
+                System.out.println("End of chat");
+            }
         }
     }
 }
