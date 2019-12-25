@@ -17,12 +17,9 @@ public class Main {
             listOfChatMembers.add("member" + i + " name: ");
         }
 
-        while (true) {
+        while (!listOfChatMembers.isEmpty()){
             printTimeOfTheMessage();
             chatAction (listOfChatMembers);
-            if (listOfChatMembers.isEmpty()) {
-                return;
-            }
         }
     }
 
